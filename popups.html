@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="GRRIx4avFvJIDmHDr9Vrdpok6YN7yNeYTZiPThb6XAM" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7986194877222528"
+     crossorigin="anonymous"></script>
+    <script>
+        function copyToClipboard(textToCopy, popoverId) {
+            navigator.clipboard.writeText(textToCopy).then(function() {
+                const popover = document.getElementById(popoverId);
+                popover.style.display = 'inline-block';
+
+                setTimeout(() => {
+                    popover.style.display = 'none';
+                }, 1000);
+            }, function(err) {
+                console.error('클립보드에 복사하는데 실패했습니다.', err);
+            });
+        }
+    </script>
+    <title>네이버페이 팝업 허용 방법</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/icon.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            align: center;
+            padding: 3px 0;
+        }
+        h1 {
+            font-size: 3em;
+            color: #1ec800;
+        }
+        section {
+            margin: 100px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        h2 {
+            font-size: 2em;
+            color: #333;
+        }
+        .eximg {
+            display: block;
+            margin: 0 auto;
+            width: 80%;
+            height: auto;
+        }
+        .browser {
+            width: 25px;
+            height: auto;
+            vertical-align: middle;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        section a {
+            color: #1ec800;
+            transition: color 0.1s;
+            text-decoration: none;
+        }
+
+        section a:hover {
+            color: #19a700;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #1ec800;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+        .popover {
+            display: inline-block;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            position: absolute;
+            margin-top: 10px;
+            z-index: 1000;
+        }
+
+        .cta-button:hover {
+            background-color: #19a700;
+            color: white;
+        }
+        footer {
+            padding: 10px;
+            text-align: center;
+            background-color: #333;
+            color: white;
+        }
+
+        footer a {
+            line-height: 1.6;
+            color: #666;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <header>
+            <h1>네이버페이 팝업 허용 방법</h1>
+        </header>
+
+<section id="img">
+    <h2>
+        <img src="/howtopopup.svg" alt="How to Popup" class="eximg">
+    </h2>
+
+</section>
+
+<section id="link">
+    <h2>
+        팝업 설정 페이지 URL 복사
+    </h2>
+    <button class="cta-button" onclick="copyToClipboard('chrome://settings/content/popups', 'chrome-popover')">
+        <img src="https://www.google.com/chrome/static/images/chrome-logo-m100.svg" class="browser"> URL 복사
+    </button>
+    <div id="chrome-popover" class="popover" style="display: none;">URL이 복사되었습니다!</div>
+
+    <button class="cta-button" onclick="copyToClipboard('edge://settings/content/popups', 'edge-popover')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Microsoft_Edge_logo_%282019%29.svg" class="browser"> URL 복사
+    </button>
+    <div id="edge-popover" class="popover" style="display: none;">URL이 복사되었습니다!</div>
+
+</section>
+
+<section id="npay">
+    <h2>
+        네이버페이 팝업 허용 주소 복사
+    </h2>
+    <button class="cta-button" onclick="copyToClipboard('https://new-m.pay.naver.com:443', 'npay-popover')">주소 복사</button>
+    <div id="npay-popover" class="popover" style="display: none;">복사되었습니다!</div>
+</section>
+
+    </div>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+        window.addEventListener('load', () => {
+            document.querySelector('section').classList.add('visible');
+        });
+    </script>
+    <footer>
+    <p>&copy; 2024 <a href="https://imsleepy.pythonanywhere.com/">Imsleepy</a>. All rights reserved.</p>
+    <p><a href="/privacy_policy.html">개인정보처리방침</a></p>
+    </footer>
+</body>
+</html>
