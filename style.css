@@ -18,12 +18,13 @@ body, html {
     z-index: -1;
 }
 
+/* 수정된 헤더 스타일 - 높이와 여백 축소 */
 .main-header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.65);
+    background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(5px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
@@ -31,18 +32,18 @@ body, html {
 }
 
 .main-header.scrolled {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.95);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .header-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 0px;
+    padding: 2px 20px; /* 상하 여백 크게 줄임 */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 0px;
+    height: 40px; /* 헤더 높이 고정 */
 }
 
 .logo-title {
@@ -57,7 +58,7 @@ body, html {
 }
 
 .header-logo {
-    height: 40px;
+    height: 30px; /* 로고 크기 줄임 */
     margin-right: 10px;
 }
 
@@ -76,7 +77,7 @@ body, html {
 }
 
 .header-title {
-    font-size: 1.5em;
+    font-size: 1.2em; /* 제목 크기 줄임 */
     color: #1ec800;
     margin: 0;
     transition: color 0.3s ease;
@@ -90,7 +91,7 @@ body, html {
 }
 
 .header-nav li {
-    margin-left: 20px;
+    margin-left: 20px; /* 메뉴 간격 조정 */
 }
 
 .header-nav a {
@@ -100,7 +101,7 @@ body, html {
     position: relative;
     padding: 5px 0;
     transition: color 0.3s;
-    font-size: 1.2em;
+    font-size: 0.9em; /* 메뉴 글자 크기 조정 */
 }
 
 .header-nav a:before {
@@ -127,7 +128,7 @@ body, html {
     flex-direction: column;
     justify-content: space-between;
     width: 25px;
-    height: 10px;
+    height: 20px;
     cursor: pointer;
 }
 
@@ -139,10 +140,11 @@ body, html {
     transition: all 0.3s ease;
 }
 
+/* 컨테이너 및 기존 스타일 */
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 35px 10px 20px;
+    padding: 45px 20px 20px; /* 헤더 높이에 맞춰 상단 패딩 조정 */
 }
 
 header {
@@ -223,6 +225,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
+/* 반응형 디자인 */
 @media (max-width: 768px) {
     .header-title {
         font-size: 1em;
