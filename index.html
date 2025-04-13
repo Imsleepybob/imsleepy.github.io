@@ -19,7 +19,6 @@
 <body>
     <div class="background"></div>
     
-    <!-- 수정된 헤더 - 높이만 조정 -->
     <header class="main-header">
         <div class="header-container">
             <div class="logo-title">
@@ -57,12 +56,12 @@
 
         <section id="intro2">
             <h2></h2>
-            <p>네이버페이 포인트 클릭적립, 매번 하나하나 클릭르기.. 귀찮으시죠?</p>
+            <p>네이버페이 포인트 클릭적립, 매번 하나하나 클릭하기.. 귀찮으시죠?</p>
         </section>
 
         <section id="intro3">
             <h2></h2>
-            <p>네이버페이 포인트 자동 리시버와 함깨라면 매번 수동으로 일일이 포인트를 수집할 필요가 없습니다.</p>
+            <p>네이버페이 포인트 자동 리시버와 함깨라면 매번 수동으로 일일이 포인트를 클릭할 필요가 없습니다.</p>
         </section>
 
         <section id="how-it-works">
@@ -88,7 +87,6 @@
     </div>
 
     <script>
-        // 기존 애니메이션 스크립트
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -107,7 +105,6 @@
             document.querySelector('section').classList.add('visible');
         });
         
-        // 새로운 헤더 스크립트
         window.addEventListener('scroll', function() {
             const header = document.querySelector('.main-header');
             if (window.scrollY > 50) {
@@ -117,7 +114,6 @@
             }
         });
         
-        // 모바일 메뉴 토글
         const menuToggle = document.querySelector('.menu-toggle');
         const headerNav = document.querySelector('.header-nav');
         
@@ -126,7 +122,6 @@
             menuToggle.classList.toggle('active');
         });
         
-        // 로고 회전 애니메이션
         const logo = document.querySelector('.header-logo');
         logo.addEventListener('mouseenter', function() {
             this.classList.add('rotate');
