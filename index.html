@@ -22,8 +22,12 @@
     <header class="main-header">
         <div class="header-container">
             <div class="logo-title">
-                <img src="/logo.png" alt="네이버페이 포인트 자동 리시버 로고" class="header-logo">
-                <h1 class="header-title">네이버페이 포인트 자동 리시버</h1>
+                <a href="/" class="home-link">
+                    <img src="/logo.png" alt="네이버페이 포인트 자동 리시버 로고" class="header-logo">
+                </a>
+                <a href="/" class="home-link">
+                    <h1 class="header-title">네이버페이 포인트 자동 리시버</h1>
+                </a>
             </div>
             <nav class="header-nav">
                 <ul>
@@ -112,6 +116,15 @@
         menuToggle.addEventListener('click', function() {
             headerNav.classList.toggle('active');
             menuToggle.classList.toggle('active');
+        });
+        
+        const logo = document.querySelector('.header-logo');
+        logo.addEventListener('mouseenter', function() {
+            this.classList.add('rotate');
+        });
+        
+        logo.addEventListener('animationend', function() {
+            this.classList.remove('rotate');
         });
     </script>
     
