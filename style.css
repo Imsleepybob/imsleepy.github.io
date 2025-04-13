@@ -1,145 +1,288 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="GRRIx4avFvJIDmHDr9Vrdpok6YN7yNeYTZiPThb6XAM" />
-    <meta name="google-site-verification" content="Tra8j3JVAkH04w1uAuYMgfjXXJgF-YWam4YZQudKkxg" />
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7986194877222528"
-     crossorigin="anonymous"></script>
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <title>네이버페이 포인트 자동 리시버</title>
-    <link rel="stylesheet" href="style.css">
-    <script>
-        window.onload = function() {
-            document.body.style.display = 'block';
-        };
-    </script>
-</head>
-<body>
-    <div class="background"></div>
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/logo.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+/* 수정된 헤더 스타일 - 높이와 여백 축소 */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.main-header.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2px 20px; /* 상하 여백 크게 줄임 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px; /* 헤더 높이 고정 */
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+}
+
+.home-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    height: 30px; /* 로고 크기 줄임 */
+    margin-right: 10px;
+}
+
+/* 로고 회전 애니메이션 */
+@keyframes fullRotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.header-logo.rotate {
+    animation: fullRotation 0.7s ease-in-out;
+}
+
+.header-title {
+    font-size: 1.2em; /* 제목 크기 줄임 */
+    color: #1ec800;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.header-nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-nav li {
+    margin-left: 20px; /* 메뉴 간격 조정 */
+}
+
+.header-nav a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s;
+    font-size: 0.9em; /* 메뉴 글자 크기 조정 */
+}
+
+.header-nav a:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #1ec800;
+    transition: width 0.3s ease;
+}
+
+.header-nav a:hover {
+    color: #1ec800;
+}
+
+.header-nav a:hover:before {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 100%;
+    background-color: #1ec800;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* 컨테이너 및 기존 스타일 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 45px 20px 20px; /* 헤더 높이에 맞춰 상단 패딩 조정 */
+}
+
+header {
+    text-align: center;
+    padding: 50px 0;
+}
+
+h1 {
+    font-size: 3em;
+    color: #1ec800;
+}
+
+section {
+    margin: 200px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h2 {
+    font-size: 2em;
+    color: #333;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #666;
+}
+
+section a {
+    color: #1ec800;
+    transition: color 0.1s;
+    text-decoration: none;
+}
+
+section a:hover {
+    color: #19a700;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #1ec800;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #19a700;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(30, 200, 0, 0.3);
+}
+
+footer {
+    padding: 10px;
+    text-align: center;
+    background-color: #333;
+    color: white;
+}
+
+footer a {
+    line-height: 1.6;
+    color: #666;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .header-title {
+        font-size: 1em;
+    }
     
-    <!-- 수정된 헤더 - 높이만 조정 -->
-    <header class="main-header">
-        <div class="header-container">
-            <div class="logo-title">
-                <a href="/" class="home-link">
-                    <img src="/logo.png" alt="네이버페이 포인트 자동 리시버 로고" class="header-logo">
-                </a>
-                <a href="/" class="home-link">
-                    <h1 class="header-title">네이버페이 포인트 자동 리시버</h1>
-                </a>
-            </div>
-            <nav class="header-nav">
-                <ul>
-                    <li><a href="/updates">업데이트 내역</a></li>
-                    <li><a href="/popups">팝업 허용 방법</a></li>
-                    <li><a href="/comments">의견 보내기</a></li>
-                </ul>
-            </nav>
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </header>
-
-    <div class="container">
-        <header>
-            <h1>네이버페이 포인트 자동 리시버</h1>
-        </header>
-
-        <section id="intro1">
-            <h2>네이버페이 포인트 수집을 자동화하세요</h2>
-            <p></p>
-        </section>
-
-        <section id="intro2">
-            <h2></h2>
-            <p>네이버페이 포인트 클릭적립, 매번 하나하나 클릭르기.. 귀찮으시죠?</p>
-        </section>
-
-        <section id="intro3">
-            <h2></h2>
-            <p>네이버페이 포인트 자동 리시버와 함깨라면 매번 수동으로 일일이 포인트를 수집할 필요가 없습니다.</p>
-        </section>
-
-        <section id="how-it-works">
-            <h2>사용법</h2>
-            <p>1. <a href="https://new-m.pay.naver.com/pcpay/eventbenefit">네이버페이 혜택 페이지</a>에 접속!</p>
-            <p>2. 포인트 필터에서 원하는 금액 단위를 선택!</p>
-            <p>3. "포인트 자동 수집" 버튼 클릭!</p>
-            <p>4. 15원, 10원일 경우, 포인트 적립 버튼 클릭하기</p>
-            <p>5. 5원, 1원은 완전 자동 적립!</p>
-        </section>
-
-        <section id="attention">
-            <h2>참고사항</h2>
-            <p>확장 프로그램을 작동하기 전, 팝업을 허용해야 합니다! <a href="/popups">>>팝업 허용 방법 알아보기 >></a></p>
-            <p>자동 수집을 시작하면 탭이 수십개가 한 번에 열리니, 꼭 새로운 창에서 작동하는 것, 잊지 마세요!</p>
-        </section>
-
-        <section id="cta">
-            <h2>지금 시작하세요</h2>
-            <p>Chrome 웹 스토어에서 네이버페이 포인트 자동 리시버를 다운로드하고 설치하세요. 설치비 따윈 없습니다.</p>
-            <a href="https://chromewebstore.google.com/detail/%EB%84%A4%EC%9D%B4%EB%B2%84%ED%8E%98%EC%9D%B4-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%9E%90%EB%8F%99-%EB%A6%AC%EC%8B%9C%EB%B2%84/ednkemhjjdpdpgkkdkhbdkclfgohjmge/" class="cta-button">다운로드</a>
-        </section>
-    </div>
-
-    <script>
-        // 기존 애니메이션 스크립트
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
-        
-        window.addEventListener('load', () => {
-            document.querySelector('section').classList.add('visible');
-        });
-        
-        // 새로운 헤더 스크립트
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('.main-header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-        
-        // 모바일 메뉴 토글
-        const menuToggle = document.querySelector('.menu-toggle');
-        const headerNav = document.querySelector('.header-nav');
-        
-        menuToggle.addEventListener('click', function() {
-            headerNav.classList.toggle('active');
-            menuToggle.classList.toggle('active');
-        });
-        
-        // 로고 회전 애니메이션
-        const logo = document.querySelector('.header-logo');
-        logo.addEventListener('mouseenter', function() {
-            this.classList.add('rotate');
-        });
-        
-        logo.addEventListener('animationend', function() {
-            this.classList.remove('rotate');
-        });
-    </script>
+    .header-logo {
+        height: 25px;
+    }
     
-    <footer>
-        <p>&copy; 2025 <a href="https://imsleepy.xyz">Imsleepy</a>. All rights reserved.</p>
-        <p><a href="https://forms.gle/vz5P47SnXa49sXmE9">의견 보내기</a></p>
-    </footer>
-</body>
-</html>
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .header-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.95);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .header-nav.active {
+        max-height: 300px;
+    }
+    
+    .header-nav ul {
+        flex-direction: column;
+        padding: 0;
+    }
+    
+    .header-nav li {
+        margin: 0;
+        text-align: center;
+    }
+    
+    .header-nav a {
+        display: block;
+        padding: 15px;
+    }
+    
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    section {
+        margin: 100px 0;
+    }
+}
