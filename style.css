@@ -24,7 +24,7 @@ body, html {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(5px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
@@ -32,18 +32,18 @@ body, html {
 }
 
 .main-header.scrolled {
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .header-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2px 20px; /* 상하 여백 크게 줄임 */
+    padding: 2px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 40px; /* 헤더 높이 고정 */
+    height: 40px;
 }
 
 .logo-title {
@@ -58,11 +58,10 @@ body, html {
 }
 
 .header-logo {
-    height: 30px; /* 로고 크기 줄임 */
+    height: 30px;
     margin-right: 10px;
 }
 
-/* 로고 회전 애니메이션 */
 @keyframes fullRotation {
     from {
         transform: rotate(0deg);
@@ -77,7 +76,7 @@ body, html {
 }
 
 .header-title {
-    font-size: 1.2em; /* 제목 크기 줄임 */
+    font-size: 1.2em;
     color: #1ec800;
     margin: 0;
     transition: color 0.3s ease;
@@ -91,7 +90,7 @@ body, html {
 }
 
 .header-nav li {
-    margin-left: 20px; /* 메뉴 간격 조정 */
+    margin-left: 20px;
 }
 
 .header-nav a {
@@ -101,7 +100,7 @@ body, html {
     position: relative;
     padding: 5px 0;
     transition: color 0.3s;
-    font-size: 0.9em; /* 메뉴 글자 크기 조정 */
+    font-size: 0.9em;
 }
 
 .header-nav a:before {
@@ -140,11 +139,10 @@ body, html {
     transition: all 0.3s ease;
 }
 
-/* 컨테이너 및 기존 스타일 */
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 45px 20px 20px; /* 헤더 높이에 맞춰 상단 패딩 조정 */
+    padding: 45px 20px 20px;
 }
 
 header {
@@ -244,7 +242,7 @@ footer a:hover {
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: rgba(255, 255, 255, 0.95);
+        background-color: rgba(255, 255, 255, 0.9);
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease;
