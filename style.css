@@ -39,11 +39,11 @@ body, html {
 .header-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2px 20px; /* 상하 여백 크게 줄임 */
+    padding: 0 20px; /* 상하 패딩 제거 */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 40px; /* 헤더 높이 고정 */
+    height: 30px; /* 헤더 높이 더 줄임 (기존 40px) */
 }
 
 .logo-title {
@@ -144,7 +144,7 @@ body, html {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 45px 20px 20px; /* 헤더 높이에 맞춰 상단 패딩 조정 */
+    padding: 35px 20px 20px; /* 헤더 높이에 맞춰 상단 패딩 축소 (기존 45px) */
 }
 
 header {
