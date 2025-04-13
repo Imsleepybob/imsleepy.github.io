@@ -43,7 +43,7 @@ body, html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 30px; /* 헤더 높이 더 줄임 (기존 40px) */
+    height: 20px; /* 헤더 높이 더 줄임 (기존 40px) */
 }
 
 .logo-title {
