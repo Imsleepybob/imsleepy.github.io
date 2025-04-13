@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="GRRIx4avFvJIDmHDr9Vrdpok6YN7yNeYTZiPThb6XAM" />
+    <meta name="google-site-verification" content="Tra8j3JVAkH04w1uAuYMgfjXXJgF-YWam4YZQudKkxg" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7986194877222528"
+     crossorigin="anonymous"></script>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>네이버페이 포인트 자동 리시버</title>
+    <link rel="stylesheet" href="style.css">
+  <style>
+    #feedback-form {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    #feedback-form h2 {
+        font-size: 1.8em;
+        margin-bottom: 0.5em;
+    }
+
+    .form-wrapper {
+        max-width: 800px;
+        margin: 0 auto;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .google-form {
+        width: 100%;
+        height: 1000px;
+        border: none;
+    }
+
+    @media (max-width: 768px) {
+        .google-form {
+            height: 1200px;
+        }
+    }
+</style>
+    <script>
+        window.onload = function() {
+            document.body.style.display = 'block';
+        };
+    </script>
+</head>
+<body>
+    <div class="background"></div>
+    
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-title">
+                <a href="/" class="home-link">
+                    <img src="/logo.png" alt="네이버페이 포인트 자동 리시버 로고" class="header-logo">
+                </a>
+                <a href="/" class="home-link">
+                    <h1 class="header-title">네이버페이 포인트 자동 리시버</h1>
+                </a>
+            </div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="/updates">업데이트 내역</a></li>
+                    <li><a href="/popups">팝업 허용 방법</a></li>
+                    <li><a href="/comments">의견 보내기</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <header>
+            <h1>의견 보내기</h1>
+        </header>
+
+        <!-- 기존 섹션들 아래에 추가 -->
+        <section id="feedback-form">
+            <h2>사이트나 확장 프로그램에 대한 의견을 남겨주세요!</h2>
+            <p>사이트나 확장 프로그램에 대한 의견을 남겨주세요!</p>
+            <div class="form-wrapper">
+                <iframe class="google-form" src="https://docs.google.com/forms/d/1MPrrIqpWe_3oBGdhB8p-0Px9AV7oLbD7Vqktjz0i3oY/viewform?embedded=true"
+                    frameborder="0" marginheight="0" marginwidth="0" loading="lazy">로딩 중…</iframe>
+            </div>
+        </section>
+      
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+        
+        window.addEventListener('load', () => {
+            document.querySelector('section').classList.add('visible');
+        });
+        
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        const menuToggle = document.querySelector('.menu-toggle');
+        const headerNav = document.querySelector('.header-nav');
+        
+        menuToggle.addEventListener('click', function() {
+            headerNav.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+        
+        const logo = document.querySelector('.header-logo');
+        logo.addEventListener('mouseenter', function() {
+            this.classList.add('rotate');
+        });
+        
+        logo.addEventListener('animationend', function() {
+            this.classList.remove('rotate');
+        });
+    </script>
+    
+    <footer>
+        <p>&copy; 2025 <a href="https://imsleepy.xyz">Imsleepy</a>. All rights reserved.</p>
+        <p><a href="https://forms.gle/vz5P47SnXa49sXmE9">의견 보내기</a></p>
+    </footer>
+</body>
+</html>
