@@ -39,11 +39,11 @@ body, html {
 .header-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px; /* 상하 패딩 제거 */
+    padding: 0 5px; /* 상하 패딩 제거 */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 20px; /* 헤더 높이 더 줄임 (기존 40px) */
+    height: 5px; /* 헤더 높이 더 줄임 (기존 40px) */
 }
 
 .logo-title {
