@@ -19,6 +19,7 @@
 <body>
     <div class="background"></div>
     
+    <!-- 수정된 헤더 - 높이만 조정 -->
     <header class="main-header">
         <div class="header-container">
             <div class="logo-title">
@@ -45,6 +46,10 @@
     </header>
 
     <div class="container">
+        <header>
+            <h1>네이버페이 포인트 자동 리시버</h1>
+        </header>
+
         <section id="intro1">
             <h2>네이버페이 포인트 수집을 자동화하세요</h2>
             <p></p>
@@ -83,6 +88,7 @@
     </div>
 
     <script>
+        // 기존 애니메이션 스크립트
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -101,6 +107,7 @@
             document.querySelector('section').classList.add('visible');
         });
         
+        // 새로운 헤더 스크립트
         window.addEventListener('scroll', function() {
             const header = document.querySelector('.main-header');
             if (window.scrollY > 50) {
@@ -110,6 +117,7 @@
             }
         });
         
+        // 모바일 메뉴 토글
         const menuToggle = document.querySelector('.menu-toggle');
         const headerNav = document.querySelector('.header-nav');
         
@@ -118,6 +126,7 @@
             menuToggle.classList.toggle('active');
         });
         
+        // 로고 회전 애니메이션
         const logo = document.querySelector('.header-logo');
         logo.addEventListener('mouseenter', function() {
             this.classList.add('rotate');
