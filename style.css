@@ -38,11 +38,11 @@ body, html {
 .header-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 0px;
+    padding: 10px 15px; /* 0 0px */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 0px;
+    height: 60px; /* 0px */
 }
 
 .logo-title {
