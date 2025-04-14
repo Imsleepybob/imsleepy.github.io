@@ -283,3 +283,50 @@ footer a:hover {
         margin: 100px 0;
     }
 }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            cursor: pointer;
+            font-size: 16px;
+            background-color: white;
+        }
+
+        .ad-hidden {
+            display: none !important;
+        }
+
+        .alert-box {
+            padding: 8px 12px 7px 13px;
+            background-color: #EBCDCD;
+            text-align: left;
+            word-break: normal;
+            margin-bottom: 0px;
+            border: 1px solid #A94442;
+            position: relative;
+        }
+
+        .alert-box span {
+            color: #A94442;
+            display: flex;
+            align-items: center;
+        }
+
+        .alert-box .close-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #A94442;
+            background-color: transparent;
+        }
+
+        .alert-box .close-btn:hover {
+            color: #DDDDDD;
+        }
+
+        .alert-box strong {
+            font-weight: bold;
+        }
