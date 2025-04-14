@@ -305,6 +305,8 @@ footer a:hover {
             margin-bottom: 0px;
             border: 1px solid #A94442;
             position: relative;
+            margin-top: 60px;
+            z-index: 999;
         }
 
         .alert-box span {
@@ -330,3 +332,13 @@ footer a:hover {
         .alert-box strong {
             font-weight: bold;
         }
+
+.alert-box a {
+    color: #A94442;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.alert-box a:hover {
+    color: #843534;
+}
