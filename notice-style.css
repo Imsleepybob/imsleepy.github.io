@@ -1,0 +1,249 @@
+/* 공지사항 목록 스타일 */
+#notice-list {
+    margin-top: 50px;
+}
+
+.notice-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    border-left: 4px solid #1ec800;
+}
+
+.notice-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.notice-date {
+    color: #888;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+}
+
+.notice-title {
+    margin: 0 0 15px 0;
+    font-size: 1.6em;
+}
+
+.notice-link {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.notice-link:hover {
+    color: #1ec800;
+}
+
+.notice-preview {
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.notice-more {
+    color: #1ec800;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.notice-more:hover {
+    color: #19a700;
+    transform: translateX(5px);
+}
+
+/* 페이지네이션 스타일 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.pagination a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    border-radius: 50%;
+    text-decoration: none;
+    color: #666;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.pagination a:hover {
+    background-color: rgba(30, 200, 0, 0.1);
+    color: #1ec800;
+}
+
+.pagination a.active {
+    background-color: #1ec800;
+    color: white;
+}
+
+.pagination a.next {
+    width: auto;
+    padding: 0 15px;
+    border-radius: 20px;
+}
+
+/* 공지사항 상세 페이지 스타일 */
+.notice-detail {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.notice-detail-header {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.notice-detail-title {
+    font-size: 2.2em;
+    color: #333;
+    margin: 0 0 15px 0;
+}
+
+.notice-detail-meta {
+    display: flex;
+    align-items: center;
+    color: #888;
+    font-size: 0.95em;
+}
+
+.notice-detail-date {
+    margin-right: 20px;
+}
+
+.notice-detail-content {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #444;
+}
+
+.notice-detail-content h2 {
+    font-size: 1.8em;
+    margin: 40px 0 20px;
+    color: #333;
+}
+
+.notice-detail-content h3 {
+    font-size: 1.5em;
+    margin: 30px 0 15px;
+    color: #444;
+}
+
+.notice-detail-content p {
+    margin-bottom: 20px;
+}
+
+.notice-detail-content img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.notice-detail-content code {
+    background-color: #f5f5f5;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+.notice-detail-content pre {
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: monospace;
+    margin: 20px 0;
+}
+
+.notice-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.notice-nav-btn {
+    color: #666;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.notice-nav-btn:hover {
+    color: #1ec800;
+}
+
+.notice-nav-btn.prev::before {
+    content: "←";
+    margin-right: 10px;
+}
+
+.notice-nav-btn.next::after {
+    content: "→";
+    margin-left: 10px;
+}
+
+.notice-list-btn {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.back-to-list {
+    display: inline-block;
+    background-color: #f5f5f5;
+    color: #666;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.back-to-list:hover {
+    background-color: #1ec800;
+    color: white;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+    .notice-card {
+        padding: 20px;
+    }
+    
+    .notice-title {
+        font-size: 1.4em;
+    }
+    
+    .pagination a {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .notice-detail {
+        padding: 20px;
+    }
+    
+    .notice-detail-title {
+        font-size: 1.8em;
+    }
+}
